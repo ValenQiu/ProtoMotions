@@ -18,4 +18,15 @@ data/amass/*.pkl
 !.claude/commands/
 .cursor/
 renders/
-/data/motions/amass_smpl*.pt
+/data/motions
+/data/pretrained_models
+
+# Large training/inference artifacts
+/data/**/*.pt
+/data/**/*.ckpt
+/data/**/*.pth
+/data/**/*.onnx
+
+# Common experiment outputs
+wandb/
+logs/
