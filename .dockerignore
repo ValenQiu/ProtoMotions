@@ -1,3 +1,26 @@
+# Auto-generated from .gitignore - DO NOT EDIT MANUALLY
+# Run docker/build.sh to regenerate
+
+*/babel/*.json
+.idea
+*__pycache__*
+*.egg-info
+outputs/*
+rendered_images/*
+*tmp*
+results/*
+.DS_Store
+**/.DS_Store
+
+output/
+
+# Docker-specific ignores
+.git/
+.gitignore
+.vscode/
+.idea/
+*.swp
+*.swo
 # Python cache
 __pycache__/
 *.py[cod]
