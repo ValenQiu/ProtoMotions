@@ -151,6 +151,7 @@ fuyao deploy \
     --queue="$queue" \
     --volume="$volume" \
     --nodes="$nodes" \
+    --ignore-artifact-size \
     --gpus-per-node="$gpus" || deploy_status=$?
 
 # 清理临时目录

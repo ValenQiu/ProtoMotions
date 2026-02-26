@@ -30,3 +30,9 @@ renders/
 # Common experiment outputs
 wandb/
 logs/
+
+# Exclude VCS metadata when rsync uses .gitignore as filter
+.git/
+
+# Local body model assets (large, local-only)
+/data/smpl/
