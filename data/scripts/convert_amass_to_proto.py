@@ -316,9 +316,19 @@ def main(
     motion_configs: List[str] = typer.Option(
         None, "--motion-config", help="YAML files containing motion configurations"
     ),
+    output_root_dir: Path = typer.Option(
+        None,
+        "--output-root-dir",
+        help="Root directory for output .motion files. Mirrors the input folder structure. "
+             "Defaults to amass_root_dir (alongside original data) if not specified.",
+    ),
 ):
     device = torch.device("cpu")  # cuda does not seem faster?
     dtype = torch.float32
+
+    # Resolve output root: default to amass_root_dir if not specified
+    if output_root_dir is None:
+        output_root_dir = amass_root_dir
 
     # Load motion configurations if provided
     motion_timings = {}
@@ -364,7 +374,7 @@ def main(
         if "smpl" in folder_name:
             continue
         data_dir = amass_root_dir / folder_name
-        output_dir = amass_root_dir / f"{folder_name}"
+        output_dir = output_root_dir / f"{folder_name}"
 
         all_files_in_folder = [
             f
@@ -404,7 +414,7 @@ def main(
             continue
 
         data_dir = amass_root_dir / folder_name
-        output_dir = amass_root_dir / f"{folder_name}"
+        output_dir = output_root_dir / f"{folder_name}"
 
         print(f"Processing subset {folder_name}")
         os.makedirs(output_dir, exist_ok=True)

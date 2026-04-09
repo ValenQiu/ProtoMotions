@@ -6,14 +6,14 @@
 set -e
 
 # 默认配置
-DEFAULT_IMAGE="infra-registry-vpc.cn-wulanchabu.cr.aliyuncs.com/data-infra/fuyao:protomotions-260211-1922"
+DEFAULT_IMAGE="infra-registry-vpc.cn-wulanchabu.cr.aliyuncs.com/data-infra/fuyao:your_tag"
 DEFAULT_PROJECT="rc-wbc"
 DEFAULT_SITE="fuyao_sh_n2"
 DEFAULT_QUEUE="rc-perception-cpu"
 DEFAULT_EXPERIMENT="qiulm/r01"
-DEFAULT_GPUS=0
+DEFAULT_GPUS=1
 DEFAULT_NODES=1
-DEFAULT_LABEL="motion_million"
+DEFAULT_LABEL="protomotions"
 DEFAULT_RUN_CMD="bash ./scripts/run_retargeting.sh"
 
 # 初始化变量
@@ -97,6 +97,16 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+if [[ -z "$experiment" ]]; then
+    echo "[ERROR] --experiment is required"
+    exit 1
+fi
+
+if [[ -z "$site" ]]; then
+    echo "[ERROR] --site is required"
+    exit 1
+fi
 
 echo "[INFO] 执行命令: $run_cmd"
 echo "[INFO] Docker 镜像: $image"

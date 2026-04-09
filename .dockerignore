@@ -14,6 +14,29 @@ results/*
 
 output/
 
+/data/motions
+/data/pretrained_models
+
+# Large training/inference artifacts
+/data/**/*.pt
+/data/**/*.ckpt
+/data/**/*.pth
+/data/**/*.onnx
+
+# Common experiment outputs
+wandb/
+logs/
+
+# Exclude VCS metadata when rsync uses .gitignore as filter
+.git/
+
+# Local body model assets (large, local-only)
+data/smpl/SMPL_FEMALE.pkl
+data/smpl/SMPL_MALE.pkl
+data/smpl/SMPL_NEUTRAL.pkl
+
+data/pretrained_models/*
+examples/data/*
 # Docker-specific ignores
 .git/
 .gitignore

@@ -1,7 +1,7 @@
 FROM infra-registry.cn-wulanchabu.cr.aliyuncs.com/data-infra/public:fuyao-base-1.8.7 AS data-infra
 
 # Replace this base with your project runtime image
-FROM xrobot-infra-registry.cn-wulanchabu.cr.aliyuncs.com/xrobot-infra/protomotions:2026.03.24
+FROM your-registry/your-runtime-base:latest
 
 ENV MAX_JOBS=1
 

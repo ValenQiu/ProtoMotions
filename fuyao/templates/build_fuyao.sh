@@ -9,7 +9,7 @@ if [[ -f ../.env ]]; then
   source ../.env
 fi
 
-IMAGE_NAME="${IMAGE_NAME:-protomotions}"
+IMAGE_NAME="${IMAGE_NAME:-your-project}"
 DOCKERFILE="${DOCKERFILE:-fuyao.Dockerfile}"
 FUYAO_SITE="${FUYAO_SITE:-fuyao_sh_n2}"
 STATUS_WAIT_SECONDS="${STATUS_WAIT_SECONDS:-600}"
