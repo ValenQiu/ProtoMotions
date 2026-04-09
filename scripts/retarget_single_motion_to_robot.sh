@@ -49,7 +49,7 @@ ROBOT_TYPE="$5"
 # Validate robot type
 if [ "$ROBOT_TYPE" != "g1" ] && [ "$ROBOT_TYPE" != "h1_2" ]; then
     echo "Error: robot_type must be 'g1' or 'h1_2'"
-    exit 
+    exit 1
 fi
 
 # Validate Python interpreters exist
